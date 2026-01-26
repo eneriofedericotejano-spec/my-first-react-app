@@ -1,0 +1,49 @@
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #f5f1eb;
+    min-height: 60px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.header img{
+    height: 60px;
+    width: auto;
+    display: block;
+}
+
+.header h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #8b1e1e;
+}
+
+.header ul{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+    padding: 30px;
+}   
+
+.header nav a {
+    text-decoration: none;
+    font-family: "Lato", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #8b1e1e;
+    transition: color 0.2s ease;
+}
+
+.header nav a:hover {
+    color: #40079c;
+}
+
