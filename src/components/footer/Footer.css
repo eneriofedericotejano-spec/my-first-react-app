@@ -1,8 +1,112 @@
 .footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f5f1eb;
-    min-height: 60px;
-    font-size: 30px;
+  width: 100%;
+  background-color: #9E182B99;
+  padding: 2rem 1rem;
+}
+
+.footer-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-brand {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.footer-tagline {
+  font-size: 0.9rem;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap; /* important for small screens */
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+  color: #000;
+}
+
+.footer-copy {
+  font-size: 0.8rem;
+  color: white;
+}
+
+/* 📱 Cellphones (max 600px) */
+@media (max-width: 600px) {
+  .footer {
+    padding: 1.5rem 1rem;
+  }
+
+  .footer-brand {
+    font-size: 1.1rem;
+  }
+
+  .footer-tagline {
+    font-size: 0.85rem;
+  }
+
+  .footer-links {
+    gap: 0.8rem;
+  }
+
+  .footer-copy {
+    font-size: 0.75rem;
+  }
+}
+
+/* 📱📲 Tablets (601px – 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .footer {
+    padding: 2rem;
+  }
+
+  .footer-brand {
+    font-size: 1.2rem;
+  }
+
+  .footer-tagline {
+    font-size: 0.9rem;
+  }
+
+  .footer-links a {
+    font-size: 0.95rem;
+  }
+}
+
+/* 💻 Laptops & Desktops (1025px and up) */
+@media (min-width: 1025px) {
+  .footer {
+    padding: 2.5rem 1rem;
+  }
+
+  .footer-brand {
+    font-size: 1.3rem;
+  }
+
+  .footer-tagline {
+    font-size: 1rem;
+  }
+
+  .footer-links a {
+    font-size: 1rem;
+  }
+
+  .footer-copy {
+    font-size: 0.85rem;
+  }
 }

@@ -1,0 +1,148 @@
+/* Overlay */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 9999;
+  overflow-y: auto;
+}
+
+/* Modal box */
+.contact-modal {
+  background: #fff;
+  width: 100%;
+  max-width: 700px;
+  border-radius: 18px;
+  padding: 2.5rem;
+  position: relative;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+  max-height: 90vh;
+  overflow-y: auto;
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+/* Title */
+.contact-modal h2 {
+  color: #a71919;
+  margin-bottom: 0.3rem;
+  font-size: clamp(1.6rem, 4vw, 2.1rem);
+}
+
+/* Subtitle */
+.subtitle {
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+/* Contact list */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+/* Each contact item */
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: clamp(0.95rem, 2.5vw, 1.05rem);
+  word-break: break-word;
+}
+
+.contact-item span {
+  font-size: 1.2rem;
+}
+
+/* ------------------ TABLET ------------------ */
+@media (max-width: 768px) {
+  .contact-modal {
+    padding: 2rem;
+    max-width: 95%; /* FIX: Don't exceed screen width */
+  }
+}
+
+/* ------------------ MOBILE ------------------ */
+@media (max-width: 480px) {
+  .modal-overlay {
+    padding: 0.5rem; /* FIX: Reduce padding to fit screen */
+    align-items: flex-start; /* FIX: Align to top on mobile */
+    padding-top: 2rem; /* FIX: Small top margin */
+  }
+
+  .contact-modal {
+    padding: 1.5rem;
+    border-radius: 14px;
+    width: 95%; /* FIX: Use 95% instead of 90% */
+    max-width: 95%; /* FIX: Ensure it doesn't overflow */
+    margin: 0 auto; /* FIX: Center horizontally */
+  }
+
+  .contact-modal h2 {
+    font-size: 1.5rem; /* FIX: Smaller title on mobile */
+    padding-right: 2rem; /* FIX: Space for close button */
+  }
+
+  .subtitle {
+    font-size: 0.9rem; /* FIX: Smaller subtitle */
+    margin-bottom: 1.5rem;
+  }
+
+  .close-btn {
+    top: 12px; /* FIX: Adjust close button position */
+    right: 12px;
+    font-size: 1.5rem; /* FIX: Larger for easier tapping */
+    padding: 0.5rem; /* FIX: Larger tap target */
+  }
+
+  .contact-info {
+    gap: 1rem; /* FIX: Reduce gap between items */
+  }
+
+  .contact-item {
+    flex-direction: row; /* FIX: Keep horizontal layout */
+    align-items: flex-start; /* FIX: Align to top */
+    gap: 0.6rem;
+    font-size: 0.95rem;
+  }
+
+  .contact-item span {
+    font-size: 1.2rem;
+    flex-shrink: 0; /* FIX: Prevent icon from shrinking */
+  }
+}
+
+/* ------------------ VERY SMALL MOBILE (iPhone SE, etc) ------------------ */
+@media (max-width: 375px) {
+  .contact-modal {
+    padding: 1.2rem;
+    width: 96%;
+  }
+
+  .contact-modal h2 {
+    font-size: 1.4rem;
+  }
+
+  .contact-item {
+    font-size: 0.9rem;
+  }
+}

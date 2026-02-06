@@ -1,0 +1,91 @@
+/* Section background */
+.team-section {
+  background: #fafafa;
+  padding: 4rem 1rem;
+}
+
+/* Container */
+.team-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+.team-header {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.team-badge {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #a71919;
+}
+
+.team-header h2 {
+  margin-top: 0.5rem;
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  color: #111;
+}
+
+.team-header p {
+  margin-top: 1rem;
+  font-size: 1.05rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Grid */
+.team-grid {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 3rem 2rem;
+  list-style: none;
+  padding: 0;
+}
+
+/* Card */
+.team-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Avatar */
+.team-avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+/* Info */
+.team-info h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #111;
+}
+
+.team-info p {
+  font-size: 0.95rem;
+  color: #a71919;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .team-section {
+    padding: 3rem 1rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .team-avatar {
+    width: 80px;
+    height: 80px;
+  }
+}
