@@ -3,30 +3,31 @@
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
+  width: 100vw;
+  height: 100vh;
   background: rgba(0, 0, 0, 0.55);
   backdrop-filter: blur(6px);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 9999;
-  padding: 0; /* Remove all padding */
+  padding: 16px;
+  box-sizing: border-box;
+  overflow-y: auto;
 }
 
 /* Modal box */
 .contact-modal {
   background: #fff;
-  width: calc(100vw - 2rem); /* CRITICAL: Viewport width minus small margin */
-  max-width: 400px; /* Maximum width */
+  width: 90%;
+  max-width: 500px;
   border-radius: 18px;
-  padding: 3rem 1.5rem 2rem; /* Extra top padding for close button */
+  padding: 56px 24px 32px;
   position: relative;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
   box-sizing: border-box;
-  max-height: calc(100vh - 2rem); /* CRITICAL: Don't exceed viewport */
+  max-height: 90vh;
   overflow-y: auto;
-  margin: 1rem; /* Center margin */
 }
 
 /* Close button */
@@ -36,7 +37,7 @@
   right: 12px;
   background: #a71919;
   border: none;
-  font-size: 1.8rem;
+  font-size: 28px;
   cursor: pointer;
   width: 42px;
   height: 42px;
@@ -50,6 +51,7 @@
   font-weight: 700;
   z-index: 10;
   box-shadow: 0 2px 8px rgba(167, 25, 25, 0.3);
+  flex-shrink: 0;
 }
 
 .close-btn:hover {
@@ -64,57 +66,57 @@
 /* Title */
 .contact-modal h2 {
   color: #a71919;
-  margin-bottom: 0.5rem;
-  font-size: 1.8rem;
-  padding-right: 3rem; /* Space for close button */
+  margin-bottom: 8px;
+  font-size: 28px;
+  padding-right: 50px;
   line-height: 1.2;
 }
 
 /* Subtitle */
 .subtitle {
   color: #555;
-  margin-bottom: 1.5rem;
-  font-size: 0.95rem;
+  margin-bottom: 24px;
+  font-size: 15px;
 }
 
 /* Contact list */
 .contact-info {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 16px;
 }
 
 /* Each contact item */
 .contact-item {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
-  font-size: 0.95rem;
-  word-break: break-word;
+  gap: 12px;
+  font-size: 15px;
 }
 
 .contact-item .icon {
-  font-size: 1.4rem;
+  font-size: 22px;
   flex-shrink: 0;
 }
 
 .contact-item p {
   margin: 0;
   color: #333;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
 }
 
-/* ------------------ MOBILE SPECIFIC ------------------ */
-@media (max-width: 480px) {
+/* ------------------ TABLET ------------------ */
+@media (max-width: 768px) {
   .modal-overlay {
-    padding: 0;
+    padding: 12px;
   }
 
   .contact-modal {
-    width: calc(100vw - 2.5rem); /* CRITICAL: Leave 1.25rem on each side */
-    max-width: 360px;
-    padding: 3rem 1.3rem 1.8rem;
-    margin: 1.25rem;
-    border-radius: 16px;
+    width: 92%;
+    max-width: 450px;
+    padding: 52px 20px 28px;
   }
 
   .close-btn {
@@ -122,101 +124,74 @@
     right: 10px;
     width: 40px;
     height: 40px;
-    font-size: 1.7rem;
+    font-size: 26px;
   }
 
   .contact-modal h2 {
-    font-size: 1.5rem;
-    padding-right: 3rem;
+    font-size: 26px;
+    padding-right: 48px;
   }
 
   .subtitle {
-    font-size: 0.9rem;
+    font-size: 14px;
   }
 
   .contact-item {
-    font-size: 0.9rem;
+    font-size: 14px;
+  }
+}
+
+/* ------------------ MOBILE ------------------ */
+@media (max-width: 480px) {
+  .modal-overlay {
+    padding: 10px;
+  }
+
+  .contact-modal {
+    width: 94%;
+    max-width: 100%;
+    padding: 48px 16px 24px;
+    border-radius: 16px;
+  }
+
+  .close-btn {
+    top: 10px;
+    right: 10px;
+    width: 38px;
+    height: 38px;
+    font-size: 24px;
+  }
+
+  .contact-modal h2 {
+    font-size: 22px;
+    padding-right: 44px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .contact-item {
+    font-size: 14px;
+    gap: 10px;
+  }
+
+  .contact-item .icon {
+    font-size: 20px;
   }
 }
 
 /* ------------------ VERY SMALL MOBILE ------------------ */
 @media (max-width: 375px) {
-  .contact-modal {
-    width: calc(100vw - 2rem); /* CRITICAL: 1rem on each side */
-    max-width: 340px;
-    padding: 2.8rem 1.2rem 1.6rem;
-    margin: 1rem;
-  }
-
-  .close-btn {
-    top: 8px;
-    right: 8px;
-    width: 38px;
-    height: 38px;
-    font-size: 1.6rem;
-  }
-
-  .contact-modal h2 {
-    font-size: 1.4rem;
-    padding-right: 2.8rem;
-  }
-
-  .subtitle {
-    font-size: 0.85rem;
-    margin-bottom: 1.2rem;
-  }
-
-  .contact-item {
-    font-size: 0.85rem;
-  }
-
-  .contact-item .icon {
-    font-size: 1.3rem;
-  }
-}
-
-/* ------------------ TABLET ------------------ */
-@media (min-width: 481px) and (max-width: 768px) {
-  .contact-modal {
-    width: calc(100vw - 4rem);
-    max-width: 450px;
-    padding: 3rem 2rem 2rem;
-  }
-
-  .close-btn {
-    top: 14px;
-    right: 14px;
-    width: 44px;
-    height: 44px;
-    font-size: 1.8rem;
-  }
-
-  .contact-modal h2 {
-    font-size: 1.9rem;
-  }
-
-  .subtitle {
-    font-size: 1rem;
-  }
-
-  .contact-item {
-    font-size: 1rem;
-  }
-}
-
-/* ------------------ LANDSCAPE MODE ------------------ */
-@media (max-height: 600px) and (orientation: landscape) {
   .modal-overlay {
-    align-items: flex-start;
-    overflow-y: auto;
+    padding: 8px;
   }
 
   .contact-modal {
-    width: calc(100vw - 3rem);
-    max-width: 450px;
-    max-height: calc(100vh - 1.5rem);
-    padding: 2.5rem 1.5rem 1.5rem;
-    margin: 0.75rem auto;
+    width: 95%;
+    padding: 44px 14px 20px;
+    border-radius: 14px;
   }
 
   .close-btn {
@@ -224,25 +199,66 @@
     right: 8px;
     width: 36px;
     height: 36px;
-    font-size: 1.5rem;
+    font-size: 22px;
   }
 
   .contact-modal h2 {
-    font-size: 1.3rem;
-    margin-bottom: 0.3rem;
+    font-size: 20px;
+    padding-right: 40px;
   }
 
   .subtitle {
-    font-size: 0.85rem;
-    margin-bottom: 1rem;
-  }
-
-  .contact-info {
-    gap: 0.8rem;
+    font-size: 13px;
+    margin-bottom: 18px;
   }
 
   .contact-item {
-    font-size: 0.85rem;
+    font-size: 13px;
+  }
+
+  .contact-item .icon {
+    font-size: 18px;
+  }
+}
+
+/* ------------------ LANDSCAPE MODE ------------------ */
+@media (max-height: 600px) and (orientation: landscape) {
+  .modal-overlay {
+    padding: 8px;
+    align-items: flex-start;
+  }
+
+  .contact-modal {
+    width: 80%;
+    max-width: 500px;
+    max-height: 85vh;
+    padding: 40px 20px 16px;
+  }
+
+  .close-btn {
+    top: 8px;
+    right: 8px;
+    width: 34px;
+    height: 34px;
+    font-size: 20px;
+  }
+
+  .contact-modal h2 {
+    font-size: 20px;
+    margin-bottom: 6px;
+  }
+
+  .subtitle {
+    font-size: 13px;
+    margin-bottom: 16px;
+  }
+
+  .contact-info {
+    gap: 12px;
+  }
+
+  .contact-item {
+    font-size: 13px;
   }
 }
 
