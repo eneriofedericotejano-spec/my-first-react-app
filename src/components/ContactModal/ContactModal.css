@@ -1,46 +1,45 @@
 /* Overlay */
 .modal-overlay {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: rgba(0, 0, 0, 0.55);
   backdrop-filter: blur(6px);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
   z-index: 9999;
-  overflow-y: auto;
+  padding: 0; /* Remove all padding */
 }
 
 /* Modal box */
 .contact-modal {
   background: #fff;
-  width: 90%; /* Changed from 100% */
-  max-width: 500px; /* Reduced from 700px */
+  width: calc(100vw - 2rem); /* CRITICAL: Viewport width minus small margin */
+  max-width: 400px; /* Maximum width */
   border-radius: 18px;
-  padding: 2.5rem;
+  padding: 3rem 1.5rem 2rem; /* Extra top padding for close button */
   position: relative;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
   box-sizing: border-box;
-  max-height: 90vh;
+  max-height: calc(100vh - 2rem); /* CRITICAL: Don't exceed viewport */
   overflow-y: auto;
-  transition:
-    transform 0.3s ease,
-    opacity 0.3s ease;
-  margin: 0 auto; /* Center it */
+  margin: 1rem; /* Center margin */
 }
 
 /* Close button */
 .close-btn {
   position: absolute;
-  top: 16px;
-  right: 16px;
+  top: 12px;
+  right: 12px;
   background: #a71919;
   border: none;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   cursor: pointer;
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -55,8 +54,7 @@
 
 .close-btn:hover {
   background: #8a1515;
-  transform: rotate(90deg) scale(1.1);
-  box-shadow: 0 4px 12px rgba(167, 25, 25, 0.5);
+  transform: rotate(90deg) scale(1.05);
 }
 
 .close-btn:active {
@@ -66,23 +64,24 @@
 /* Title */
 .contact-modal h2 {
   color: #a71919;
-  margin-bottom: 0.3rem;
-  font-size: clamp(1.4rem, 4vw, 1.8rem); /* Reduced size */
-  padding-right: 3.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+  padding-right: 3rem; /* Space for close button */
+  line-height: 1.2;
 }
 
 /* Subtitle */
 .subtitle {
   color: #555;
   margin-bottom: 1.5rem;
-  font-size: clamp(0.9rem, 2vw, 1rem);
+  font-size: 0.95rem;
 }
 
 /* Contact list */
 .contact-info {
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 1rem;
 }
 
 /* Each contact item */
@@ -90,116 +89,63 @@
   display: flex;
   align-items: center;
   gap: 0.8rem;
-  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  font-size: 0.95rem;
   word-break: break-word;
 }
 
 .contact-item .icon {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   flex-shrink: 0;
 }
 
 .contact-item p {
   margin: 0;
   color: #333;
-  font-size: inherit;
 }
 
-/* ------------------ TABLET ------------------ */
-@media (max-width: 768px) {
-  .modal-overlay {
-    padding: 0.75rem; /* Reduced padding */
-  }
-
-  .contact-modal {
-    width: 85%; /* Narrower */
-    max-width: 450px;
-    padding: 2rem 1.5rem;
-    max-height: 85vh;
-  }
-
-  .close-btn {
-    top: 12px;
-    right: 12px;
-    width: 42px;
-    height: 42px;
-    font-size: 1.6rem;
-  }
-
-  .contact-modal h2 {
-    padding-right: 3.5rem;
-    font-size: 1.6rem;
-  }
-}
-
-/* ------------------ MOBILE ------------------ */
+/* ------------------ MOBILE SPECIFIC ------------------ */
 @media (max-width: 480px) {
   .modal-overlay {
-    padding: 0.5rem; /* CRITICAL: Minimal padding */
-    align-items: center;
+    padding: 0;
   }
 
   .contact-modal {
-    width: 85%; /* CRITICAL: Much narrower */
-    max-width: 340px; /* CRITICAL: Smaller max-width */
-    padding: 2rem 1.2rem 1.5rem;
+    width: calc(100vw - 2.5rem); /* CRITICAL: Leave 1.25rem on each side */
+    max-width: 360px;
+    padding: 3rem 1.3rem 1.8rem;
+    margin: 1.25rem;
     border-radius: 16px;
-    margin: 0 auto;
-    max-height: 75vh;
-  }
-
-  .contact-modal h2 {
-    font-size: 1.4rem;
-    padding-right: 3rem;
-    line-height: 1.3;
-    margin-bottom: 0.4rem;
-  }
-
-  .subtitle {
-    font-size: 0.85rem;
-    margin-bottom: 1.2rem;
   }
 
   .close-btn {
     top: 10px;
     right: 10px;
-    font-size: 1.6rem;
     width: 40px;
     height: 40px;
-    font-weight: 700;
-  }
-
-  .contact-info {
-    gap: 1rem;
-  }
-
-  .contact-item {
-    flex-direction: row;
-    align-items: center;
-    gap: 0.7rem;
-    font-size: 0.9rem;
-  }
-
-  .contact-item .icon {
-    font-size: 1.2rem;
-  }
-}
-
-/* ------------------ VERY SMALL MOBILE (iPhone SE, etc) ------------------ */
-@media (max-width: 375px) {
-  .modal-overlay {
-    padding: 0.5rem;
-  }
-
-  .contact-modal {
-    width: 88%; /* CRITICAL: Even narrower */
-    max-width: 320px; /* CRITICAL: Smaller */
-    padding: 1.8rem 1rem 1.3rem;
+    font-size: 1.7rem;
   }
 
   .contact-modal h2 {
-    font-size: 1.3rem;
-    padding-right: 2.8rem;
+    font-size: 1.5rem;
+    padding-right: 3rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .contact-item {
+    font-size: 0.9rem;
+  }
+}
+
+/* ------------------ VERY SMALL MOBILE ------------------ */
+@media (max-width: 375px) {
+  .contact-modal {
+    width: calc(100vw - 2rem); /* CRITICAL: 1rem on each side */
+    max-width: 340px;
+    padding: 2.8rem 1.2rem 1.6rem;
+    margin: 1rem;
   }
 
   .close-btn {
@@ -207,12 +153,17 @@
     right: 8px;
     width: 38px;
     height: 38px;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
+  }
+
+  .contact-modal h2 {
+    font-size: 1.4rem;
+    padding-right: 2.8rem;
   }
 
   .subtitle {
-    font-size: 0.8rem;
-    margin-bottom: 1rem;
+    font-size: 0.85rem;
+    margin-bottom: 1.2rem;
   }
 
   .contact-item {
@@ -220,42 +171,70 @@
   }
 
   .contact-item .icon {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
   }
 }
 
-/* ------------------ LANDSCAPE MODE (Short screens) ------------------ */
+/* ------------------ TABLET ------------------ */
+@media (min-width: 481px) and (max-width: 768px) {
+  .contact-modal {
+    width: calc(100vw - 4rem);
+    max-width: 450px;
+    padding: 3rem 2rem 2rem;
+  }
+
+  .close-btn {
+    top: 14px;
+    right: 14px;
+    width: 44px;
+    height: 44px;
+    font-size: 1.8rem;
+  }
+
+  .contact-modal h2 {
+    font-size: 1.9rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .contact-item {
+    font-size: 1rem;
+  }
+}
+
+/* ------------------ LANDSCAPE MODE ------------------ */
 @media (max-height: 600px) and (orientation: landscape) {
   .modal-overlay {
     align-items: flex-start;
-    padding: 0.5rem;
-    padding-top: 1rem;
+    overflow-y: auto;
   }
 
   .contact-modal {
-    width: 70%;
-    max-width: 400px;
-    max-height: 80vh;
-    padding: 1.3rem 1.2rem 1rem;
+    width: calc(100vw - 3rem);
+    max-width: 450px;
+    max-height: calc(100vh - 1.5rem);
+    padding: 2.5rem 1.5rem 1.5rem;
+    margin: 0.75rem auto;
   }
 
   .close-btn {
     top: 8px;
     right: 8px;
-    width: 35px;
-    height: 35px;
-    font-size: 1.4rem;
+    width: 36px;
+    height: 36px;
+    font-size: 1.5rem;
   }
 
   .contact-modal h2 {
     font-size: 1.3rem;
     margin-bottom: 0.3rem;
-    padding-right: 2.8rem;
   }
 
   .subtitle {
-    margin-bottom: 0.8rem;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
   }
 
   .contact-info {
