@@ -112,7 +112,7 @@ function Main() {
       <section className="services-container">
         <div className="servicescard slide-in-left">
           <h2 className="do">
-            What does <span className="highlight">Innovision</span> do?
+            What does <span className="highlight">InnoVision</span> do?
           </h2>
           <p>
             Innovision offers end-to-end solutions in Business Process
@@ -128,7 +128,7 @@ function Main() {
 
         <div className="choosecard slide-in-right">
           <h2 className="fa-choose">
-            Why choose <span className="highlight">Innovision</span>?
+            Why choose <span className="highlight">InnoVision</span>?
           </h2>
           <p>
             Choosing InnoVision means working with a team that values quality,
@@ -152,7 +152,7 @@ function Main() {
             />
           </div>
           <div className="titleanddescription slide-in-right">
-            <h2 className="systemname">FurEver Veterinary Management System</h2>
+            <h2 className="systemname">FurEver Care Veterinary System</h2>
             <p className="description">
               A web-based Financial Management System designed to help
               businesses efficiently manage and monitor their financial

@@ -4,7 +4,7 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="footer-content">
-        <h4 className="footer-brand">Innovision</h4>
+        <h4 className="footer-brand">InnoVision</h4>
 
         <p className="footer-tagline">
           Building smart digital solutions for modern organizations.

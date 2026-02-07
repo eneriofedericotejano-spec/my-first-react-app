@@ -1,5 +1,5 @@
 import "./Header.css";
-import logo from "../../assets/logo1.png";
+import logo from "../../assets/logo2.png";
 import { useState, useEffect } from "react";
 
 function Header() {
@@ -55,7 +55,7 @@ function Header() {
     <header className={`header ${isScrolled ? "scrolled" : ""}`}>
       <div className="container">
         <img src={logo} alt="Nexus Logo" />
-        <h1>Innovision</h1>
+        <h1>InnoVision</h1>
       </div>
 
       {/* Hamburger Menu Button */}

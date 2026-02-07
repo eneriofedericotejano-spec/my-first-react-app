@@ -21,7 +21,7 @@ function ContactModal({ isOpen, onClose }) {
 
           <div className="contact-item">
             <span className="icon">✉️</span>
-            <p>nuvion.devteam@gmail.com</p>
+            <p>InnoVision.devteam@gmail.com</p>
           </div>
         </div>
       </div>
