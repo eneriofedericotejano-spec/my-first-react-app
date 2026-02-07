@@ -10,13 +10,6 @@ function Footer() {
           Building smart digital solutions for modern organizations.
         </p>
 
-        <div className="footer-links">
-          <a href="#">Home</a>
-          <a href="#">About</a>
-          <a href="#">Services</a>
-          <a href="#">Contact</a>
-        </div>
-
         <p className="footer-copy">
           © 2026 Innovision. All rights reserved.
         </p>

@@ -11,7 +11,6 @@ function Header() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -41,7 +40,7 @@ function Header() {
 
     const targetSection = document.querySelector(sectionMap[sectionId]);
     if (targetSection) {
-      const headerHeight = 100; 
+      const headerHeight = 100;
       const targetPosition = targetSection.offsetTop - headerHeight;
 
       window.scrollTo({
@@ -72,6 +71,14 @@ function Header() {
 
       {/* Navigation */}
       <nav className={`navigation ${isMenuOpen ? "active" : ""}`}>
+        <button
+          className="close-menu-btn"
+          onClick={closeMenu}
+          aria-label="Close menu"
+        >
+          ✕
+        </button>
+
         <ul>
           <li>
             <a href="#about" onClick={(e) => scrollToSection(e, "about")}>
@@ -83,12 +90,12 @@ function Header() {
               Our Services
             </a>
           </li>
-           <li>
+          <li>
             <a href="#projects" onClick={(e) => scrollToSection(e, "projects")}>
               Our Projects
             </a>
           </li>
-           <li>
+          <li>
             <a href="#team" onClick={(e) => scrollToSection(e, "team")}>
               Meet the Team
             </a>

@@ -23,23 +23,7 @@
   margin-bottom: 1rem;
 }
 
-.footer-links {
-  display: flex;
-  justify-content: center;
-  gap: 1.2rem;
-  margin-bottom: 1rem;
-  flex-wrap: wrap; /* important for small screens */
-}
 
-.footer-links a {
-  text-decoration: none;
-  color: white;
-  font-size: 0.9rem;
-}
-
-.footer-links a:hover {
-  color: #000;
-}
 
 .footer-copy {
   font-size: 0.8rem;
@@ -60,10 +44,7 @@
     font-size: 0.85rem;
   }
 
-  .footer-links {
-    gap: 0.8rem;
-  }
-
+  
   .footer-copy {
     font-size: 0.75rem;
   }
@@ -83,10 +64,6 @@
     font-size: 0.9rem;
   }
 
-  .footer-links a {
-    font-size: 0.95rem;
-  }
-}
 
 /* 💻 Laptops & Desktops (1025px and up) */
 @media (min-width: 1025px) {
@@ -102,11 +79,8 @@
     font-size: 1rem;
   }
 
-  .footer-links a {
-    font-size: 1rem;
-  }
-
   .footer-copy {
     font-size: 0.85rem;
   }
+}
 }
