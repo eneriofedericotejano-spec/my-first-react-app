@@ -152,17 +152,15 @@ function Main() {
             />
           </div>
           <div className="titleanddescription slide-in-right">
-            <h2 className="systemname">FurEver Care Veterinary System</h2>
+            <h2 className="systemname">FurEver Care Veterinary Services Marketing and Promotion</h2>
             <p className="description">
-              A web-based Financial Management System designed to help
-              businesses efficiently manage and monitor their financial
-              operations. The system integrates payroll processing, expense
-              tracking, invoicing, and advanced financial reporting into a
-              single, centralized platform. By providing real-time financial
-              insights, automated calculations, and intuitive dashboards, the
-              system enables businesses to maintain financial control, improve
-              accuracy, ensure transparency, and make strategic decisions that
-              drive growth and stability.
+              Fur-Ever Care Veterinary Services Marketing and Promotion is a
+              modern, user-friendly digital platform that lets clinic staff
+              easily create, update, and manage promotions such as discounts,
+              pet care packages, and seasonal offers through a simple dashboard.
+              This boosts visibility, strengthens client connections, and
+              encourages loyalty, using modern customer engagement and
+              technology to ensure clinics succeed in a digital world.
             </p>
           </div>
         </div>
@@ -205,16 +203,11 @@ function Main() {
           <div className="titleanddescription slide-in-right">
             <h2 className="systemname">St. Rupert Medical Clinic</h2>
             <p className="description">
-              A web-based Medical Clinic Management and Information System
-              designed to provide patients with easy access to clinic services
-              and essential healthcare information. The system features online
-              appointment requests, service listings, clinic schedules, and
-              institutional details such as mission, vision, and goals, all
-              presented through a clean and user-friendly interface. By
-              centralizing patient interaction, improving accessibility, and
-              streamlining appointment coordination, the system enhances patient
-              experience, supports efficient clinic operations, and promotes
-              organized, reliable healthcare service delivery.
+              St. Rupert Medical Clinic Appointment System is a dedicated
+              scheduling service that allows patients to book and manage
+              appointments with ease. Focused solely on appointment handling, it
+              ensures organized scheduling, reduced waiting times, and a smooth
+              experience for both patients and clinic staff.
             </p>
           </div>
         </div>
